@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
+@font-face {
+  font-family: titleFont;
+  src: url("./assets/fonts/titleFont.otf");
+}
+@theme{
+  --font-body: "DM Sans", sans-serif;
+  --font-title: titleFont, serif;
+   --color-yellow: #ffb400;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+@utility flex-center {
+    @apply flex justify-center items-center;
+}
+
+@utility col-center {
+    @apply flex flex-col justify-center items-center;
+}
+
+@utility abs-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@layer components {
+    main {
+        @apply w-full overflow-x-hidden;
+    }
+    nav{
+        a {
+            @apply cursor-pointer text-nowrap text-lg hover:text-yellow transition-all ease-in-out duration-200;
+        }
+        li + li{
+            @apply ml-4;
+        }
+    }
+}
